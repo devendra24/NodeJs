@@ -7,3 +7,7 @@
 .sign-up a{
     cursor: pointer;
 }
+
+.error{
+    color: rgba(218, 93, 52, 0.706);
+}
