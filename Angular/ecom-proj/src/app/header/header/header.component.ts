@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit{
   menuType:string = 'default';
+  sellerName:string = '';
   constructor(private router:Router){}
   ngOnInit(): void {
     this.router.events.subscribe((val:any)=>{
@@ -15,6 +16,9 @@ export class HeaderComponent implements OnInit{
         if(localStorage.getItem("seller")&&val.url.includes('seller')){
           console.warn("inside seller");
           this.menuType='seller';
+          let sName= localStorage.getItem('seller');
+          let sellerData= sName &&JSON.parse(sName)[0];
+          this.sellerName=sellerData.name;
         }
         else{
           this.menuType='default';
@@ -23,6 +27,9 @@ export class HeaderComponent implements OnInit{
       }
     })
   }
-
+  logOut(){
+    localStorage.removeItem('seller');
+    this.router.navigate(['/']);
+  }
   
 }
