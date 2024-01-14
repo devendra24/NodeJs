@@ -4,3 +4,6 @@
     margin-top: 80px;
     color: blueviolet;
 }
+.sign-up a{
+    cursor: pointer;
+}
