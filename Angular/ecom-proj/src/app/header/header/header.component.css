@@ -47,3 +47,8 @@
     height: 39px;
     border-left: none;
 }
+
+.nav a{
+    text-decoration: none;
+    color: blueviolet;
+}
